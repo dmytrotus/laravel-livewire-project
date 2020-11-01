@@ -40,9 +40,7 @@
 
 <div class="container">
   
-  <div class="mb-3 text-center row">
-    <livewire:search-products />
-  </div>
+  <livewire:search-products />
 
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">

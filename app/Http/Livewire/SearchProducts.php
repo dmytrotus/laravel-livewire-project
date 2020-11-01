@@ -4,17 +4,22 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Product;
+use Livewire\WithPagination;
 
 class SearchProducts extends Component
 {	
-	public $product_id = '';
+	use WithPagination;
+
+	public $search = '';
 
     public function render()
-    {
+    {	
+    	//sleep(1);
         return view('livewire.search-products', [
-            'products' => Product::where('id', $this->product_id )->get(),
-            'product_id' => $this->product_id
+            'productswire' => Product::search('title', $this->search)->paginate(5),
+            'searchphrase' => $this->search
         ]);
     }
+
 
 }
