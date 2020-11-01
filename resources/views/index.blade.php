@@ -32,10 +32,9 @@
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="pricing.css" rel="stylesheet">
   </head>
   <body>
+
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
   <nav class="my-2 my-md-0 mr-md-3">
@@ -48,7 +47,7 @@
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Products</h1>
+  <h1 class="display-4">Products list</h1>
 </div>
 
 <div class="container">
@@ -58,22 +57,18 @@
     @foreach($products as $product)
     <div class="card col-md-4 mb-4 shadow-sm p-0 mb-1">
       <div class="card-header">
-        <h4 class="my-0 font-weight-normal">Free</h4>
+        <h4 class="my-0 font-weight-normal">{{ $product->title }}</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li>10 users included</li>
-          <li>2 GB of storage</li>
-          <li>Email support</li>
-          <li>Help center access</li>
-        </ul>
-        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+        <h1 class="card-title pricing-card-title">$0</h1>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Buy</button>
       </div>
     </div>
     @endforeach
 
   </div>
+
+  {{ $products->links('vendor.pagination.bootstrap-4') }}
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
