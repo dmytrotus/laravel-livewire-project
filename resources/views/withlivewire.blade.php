@@ -39,10 +39,6 @@
 </div>
 
 <div class="container">
-
-  <div class="form-group">
-    <input wire:model="search" placeholder="Enter the name of product" class="form-control">
-  </div>
   
   <div class="mb-3 text-center row">
     <livewire:search-products />
